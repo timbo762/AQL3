@@ -21,7 +21,7 @@ public class UserServiceTest {
     @Test
     public void testCreerUtilisateur() throws ServiceException {
 
-        Utilisateur utilisateur = new Utilisateur("oussama", "zahali", "oussamazahali@email.com");
+        Utilisateur utilisateur = new Utilisateur("oussama", "zahali", "oussamazahali@gmail.com");
 
 
         when(utilisateurApiMock.creerUtilisateur(utilisateur)).thenReturn(true);
@@ -40,11 +40,11 @@ public class UserServiceTest {
     @Test(expected = ServiceException.class)
     public void testCreerUtilisateur_Exception() throws ServiceException {
 
-        Utilisateur utilisateur = new Utilisateur("oussama", "zahali", "oussamazahali@email.com");
+        Utilisateur utilisateur = new Utilisateur("oussama", "zahali", "oussamazahali@gmail.com");
 
 
         when(utilisateurApiMock.creerUtilisateur(utilisateur))
-                .thenThrow(new ServiceException("Echec de la création de l'utilisateur"));
+                .thenThrow(new ServiceException(" l'utilisateur n' est pas cree "));
 
 
         UserService userService = new UserService(utilisateurApiMock);
@@ -72,13 +72,13 @@ public class UserServiceTest {
     @Test
     public void testCreerUtilisateur_WithId() throws ServiceException {
 
-        Utilisateur utilisateur = new Utilisateur("oussama", "zahali", "oussamazahali@email.com");
+        Utilisateur utilisateur = new Utilisateur("oussama", "zahali", "oussamazahali@gmail.com");
 
 
         when(utilisateurApiMock.creerUtilisateur(utilisateur)).thenReturn(true);
 
 
-        int idUtilisateur = 123;
+        int idUtilisateur = 1962;
 
 
         utilisateur.setId(idUtilisateur);
@@ -97,7 +97,7 @@ public class UserServiceTest {
     @Test
     public void testCreerUtilisateur_ArgumentCaptor() throws ServiceException {
 
-        Utilisateur utilisateur = new Utilisateur("Joussama", "zahali", "oussamazahali@email.com");
+        Utilisateur utilisateur = new Utilisateur("oussama", "zahali", "oussamazahali@gmail.com");
 
 
         when(utilisateurApiMock.creerUtilisateur(any(Utilisateur.class))).thenReturn(true);
