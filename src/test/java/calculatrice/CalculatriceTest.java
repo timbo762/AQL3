@@ -20,20 +20,20 @@ public class CalculatriceTest {
     @Test
     public void testAdditionnerAvecMockito() {
 
-        when(calculatriceMock.additionner(2, 3)).thenReturn(5);
+        when(calculatriceMock.additionner(6, 1)).thenReturn(7);
 
 
-        int resultat = calculatriceMock.additionner(2, 3);
+        int resultat = calculatriceMock.additionner(6, 1);
 
 
-        assertEquals(5, resultat);
+        assertEquals(7, resultat);
 
-        verify(calculatriceMock).additionner(2, 3);
+        verify(calculatriceMock).additionner(6, 1);
         verifyNoMoreInteractions(calculatriceMock);
 
 
-        when(calculatriceMock.getResult()).thenReturn(5);
-        assertEquals(5, calculatriceMock.getResult());
+        when(calculatriceMock.getResult()).thenReturn(7);
+        assertEquals(7, calculatriceMock.getResult());
         verify(calculatriceMock).getResult();
     }
 
@@ -43,12 +43,12 @@ public class CalculatriceTest {
         Calculatrice calculatrice = new Calculatrice();
 
 
-        int resultat = calculatrice.additionner(2, 3);
+        int resultat = calculatrice.additionner(6, 1);
 
 
-        assertEquals(5, resultat);
+        assertEquals(7, resultat);
 
 
-        assertEquals(5, calculatrice.getResult());
+        assertEquals(7, calculatrice.getResult());
     }
 }
