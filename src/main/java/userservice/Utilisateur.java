@@ -1,7 +1,5 @@
 package userservice;
 
-
-
 public class Utilisateur {
     private int id;
     private String nom;
